@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff9e9">
+  <meta name="description" content="Portfólio de Sara: estudante, leitora, desenhista e curiosa por tecnologia.">
+  <title>Portfólio | Sara</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #352f24;
+      --muted: #736b5d;
+      --paper: #fffdf7;
+      --cream: #fff9e9;
+      --yellow: #f5c84c;
+      --gold: #d99e17;
+      --line: #eee5d1;
+      --green: #536744;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(1080px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    header {
+      padding: 20px 0;
+      background: var(--paper);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--ink);
+      font-size: 1.15rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: .95rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--gold);
+    }
+
+    .hero {
+      overflow: hidden;
+      padding: 72px 0 78px;
+      background:
+        radial-gradient(ellipse at 10% 10%, #fff0bd 0, transparent 34%),
+        var(--cream);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--green);
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 600px;
+      margin-bottom: 18px;
+      font-size: clamp(2.6rem, 6vw, 4.6rem);
+      letter-spacing: -.055em;
+      line-height: 1.06;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    .hero-copy {
+      max-width: 520px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 20px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--ink);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--green);
+    }
+
+    .portrait-frame {
+      position: relative;
+      width: min(100%, 370px);
+      justify-self: center;
+      padding: 14px;
+      border: 1px solid #f0dfad;
+      border-radius: 48% 48% 35px 35px;
+      background: #fffdf8;
+      box-shadow: 0 24px 60px #7b61201c;
+      transform: rotate(2deg);
+    }
+
+    .portrait-frame::before {
+      position: absolute;
+      z-index: 0;
+      top: -16px;
+      right: -14px;
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      background: var(--yellow);
+      content: "";
+    }
+
+    .portrait-frame img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 430px;
+      border-radius: 48% 48% 25px 25px;
+      object-fit: cover;
+      object-position: center 35%;
+    }
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-heading {
+      max-width: 620px;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      letter-spacing: -.04em;
+      line-height: 1.15;
+    }
+
+    .section-intro {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .about-note {
+      padding: 26px;
+      border-radius: 22px;
+      background: #f7f4e9;
+    }
+
+    .about-note strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green);
+      font-size: 1.05rem;
+    }
+
+    .about-note p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .about-copy {
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .about-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .courses-section {
+      background: var(--cream);
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .course-card {
+      min-height: 170px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--paper);
+    }
+
+    .course-icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 18px;
+      place-items: center;
+      border-radius: 13px;
+      background: #fff1c2;
+      font-size: 1.2rem;
+    }
+
+    .course-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+      line-height: 1.35;
+    }
+
+    .course-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    footer {
+      padding: 52px 0 24px;
+      background: #302d25;
+      color: #fffdf7;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 36px;
+    }
+
+    footer h2 {
+      margin-bottom: 10px;
+      font-size: 1.8rem;
+    }
+
+    footer p {
+      max-width: 430px;
+      margin-bottom: 0;
+      color: #d5d0c4;
+    }
+
+    footer .eyebrow {
+      color: var(--yellow);
+    }
+
+    .footer-contact {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .contact-item {
+      padding: 15px 18px;
+      border: 1px solid #ffffff26;
+      border-radius: 14px;
+      color: #fffdf7;
+      text-decoration: none;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--yellow);
+      font-size: .85rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .contact-item span {
+      color: #e4e0d7;
+      font-size: .95rem;
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .socials span {
+      padding: 8px 14px;
+      border: 1px solid #ffffff40;
+      border-radius: 999px;
+      color: #fffdf7;
+      font-size: .9rem;
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      border-top: 1px solid #ffffff26;
+      color: #c8c2b6;
+      font-size: .86rem;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 54px 0 62px;
+      }
+
+      .hero-grid,
+      .about,
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .hero-grid {
+        text-align: center;
+      }
+
+      .hero-copy {
+        margin-inline: auto;
+      }
+
+      .portrait-frame {
+        width: min(78%, 330px);
+      }
+
+      .portrait-frame img {
+        height: 370px;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+
+      .course-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .wrap {
+        width: min(100% - 32px, 1080px);
+      }
+
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a {
+        font-size: .88rem;
+      }
+
+      .course-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Navegação principal">
+      <a class="brand" href="#inicio">Sara<span>.</span></a>
+      <div class="nav-links">
+        <a href="#sobre">Sobre mim</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Estudante • Criativa • Curiosa</p>
+          <h1>Oi, eu sou a <span>Sara!</span></h1>
+          <p class="hero-copy">Estou aprendendo sobre tecnologia e descobrindo, a cada dia, novas formas de criar e compartilhar ideias.</p>
+          <a class="button" href="#sobre">Conheça minha história</a>
+        </div>
+        <div class="portrait-frame">
+          <img src="Galeria/WhatsApp%20Image%202026-10-20%20at%2014.58.55.jpeg" alt="Sara usando óculos e bigode rosa de filtro">
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="wrap about">
+        <div class="section-heading">
+          <p class="eyebrow">Um pouco sobre mim</p>
+          <h2>Aprender também é uma aventura.</h2>
+          <div class="about-note">
+            <strong>Meu momento agora</strong>
+            <p>1º ano do ensino médio · Tecnologia Básica na AFESU Morro Velho</p>
+          </div>
+        </div>
+        <div class="about-copy">
+          <p>Meu nome é Sara, tenho 16 anos e moro em Taboão da Serra. Estou no 1º ano do ensino médio e também curso Tecnologia Básica na AFESU Morro Velho.</p>
+          <p>Gosto de desenhar e de ler. Sou curiosa, adoro aprender coisas novas e estou construindo meu caminho no mundo da tecnologia.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="courses-section" id="cursos">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">O que estou aprendendo</p>
+          <h2>Cursos e conhecimentos</h2>
+          <p class="section-intro">Cada curso é uma oportunidade para desenvolver novas habilidades.</p>
+        </div>
+        <div class="course-grid">
+          <article class="course-card">
+            <span class="course-icon" aria-hidden="true">⌨</span>
+            <h3>Operador de Microcomputador</h3>
+            <p>AFESU/SENAI · 160 horas</p>
+          </article>
+          <article class="course-card">
+            <span class="course-icon" aria-hidden="true">▥</span>
+            <h3>Power BI</h3>
+            <p>AFESU/SENAI · 32 horas</p>
+          </article>
+          <article class="course-card">
+            <span class="course-icon" aria-hidden="true">⌁</span>
+            <h3>Implantação de Redes Locais</h3>
+            <p>AFESU/SENAI · 48 horas</p>
+          </article>
+          <article class="course-card">
+            <span class="course-icon" aria-hidden="true">▦</span>
+            <h3>Excel Básica com IA Generativa</h3>
+            <p>AFESU/SENAI · 20 horas</p>
+          </article>
+          <article class="course-card">
+            <span class="course-icon" aria-hidden="true">✳</span>
+            <h3>Programação com IA Generativa</h3>
+            <p>AFESU/SENAI · 40 horas</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <p class="eyebrow">Vamos conversar?</p>
+          <h2>Fale comigo</h2>
+          <p>Este espaço está pronto para receber meus contatos e redes sociais.</p>
+          <div class="socials" aria-label="Redes sociais">
+            <span>@saracriativa</span>
+            <span>LinkedIn</span>
+            <span>Email</span>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <a class="contact-item" href="https://wa.me/5511999999999" target="_blank" rel="noreferrer">
+            <strong>WhatsApp</strong>
+            <span>+55 (11) 9 9999-9999</span>
+          </a>
+          <a class="contact-item" href="mailto:sara.portfolio@gmail.com">
+            <strong>Email</strong>
+            <span>sara.portfolio@gmail.com</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Sara · Feito com carinho e vontade de aprender.</div>
+    </div>
+  </footer>
+</body>
+</html>
