@@ -15,6 +15,8 @@
       --cream: #fff9e9;
       --yellow: #f5c84c;
       --gold: #d99e17;
+      --red: #b53b34;
+      --red-soft: #fff0ed;
       --line: #eee5d1;
       --green: #536744;
     }
@@ -155,6 +157,14 @@
       background: var(--green);
     }
 
+    .button-senai {
+      background: var(--red);
+    }
+
+    .button-senai:hover {
+      background: #922c27;
+    }
+
     .portrait-frame {
       position: relative;
       width: min(100%, 370px);
@@ -207,8 +217,21 @@
     }
 
     .section-intro {
+      max-width: 700px;
+      margin-top: 20px;
       margin-bottom: 0;
+      padding: 18px 22px;
+      border-left: 5px solid var(--red);
+      border-radius: 0 16px 16px 0;
+      background: var(--red-soft);
       color: var(--muted);
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .section-intro strong {
+      color: var(--red);
+      font-weight: 800;
     }
 
     .about {
@@ -263,11 +286,24 @@
       background: var(--paper);
     }
 
+    .course-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--red-soft);
+      color: var(--red);
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
     .course-icon {
       display: grid;
       width: 42px;
       height: 42px;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
       place-items: center;
       border-radius: 13px;
       background: #fff1c2;
@@ -484,37 +520,43 @@
     <section class="courses-section" id="cursos">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">O que estou aprendendo</p>
-          <h2>Cursos e conhecimentos</h2>
-          <p class="section-intro">Cada curso é uma oportunidade para desenvolver novas habilidades.</p>
+          <p class="eyebrow">Formação em destaque</p>
+          <h2>Cursos realizados</h2>
+          <p class="section-intro">Formações realizadas na <strong>AFESU Morro Velho</strong>, em parceria com o <strong>SENAI</strong>. Os cursos abaixo têm <strong>certificado SENAI</strong>.</p>
         </div>
         <div class="course-grid">
           <article class="course-card">
+            <span class="course-badge">✓ Certificado SENAI</span>
             <span class="course-icon" aria-hidden="true">⌨</span>
             <h3>Operador de Microcomputador</h3>
-            <p>AFESU/SENAI · 160 horas</p>
+            <p>AFESU Morro Velho · parceria com SENAI · 160 horas</p>
           </article>
           <article class="course-card">
+            <span class="course-badge">✓ Certificado SENAI</span>
             <span class="course-icon" aria-hidden="true">▥</span>
             <h3>Power BI</h3>
-            <p>AFESU/SENAI · 32 horas</p>
+            <p>AFESU Morro Velho · parceria com SENAI · 32 horas</p>
           </article>
           <article class="course-card">
+            <span class="course-badge">✓ Certificado SENAI</span>
             <span class="course-icon" aria-hidden="true">⌁</span>
             <h3>Implantação de Redes Locais</h3>
-            <p>AFESU/SENAI · 48 horas</p>
+            <p>AFESU Morro Velho · parceria com SENAI · 48 horas</p>
           </article>
           <article class="course-card">
+            <span class="course-badge">✓ Certificado SENAI</span>
             <span class="course-icon" aria-hidden="true">▦</span>
             <h3>Excel Básica com IA Generativa</h3>
-            <p>AFESU/SENAI · 20 horas</p>
+            <p>AFESU Morro Velho · parceria com SENAI · 20 horas</p>
           </article>
           <article class="course-card">
+            <span class="course-badge">✓ Certificado SENAI</span>
             <span class="course-icon" aria-hidden="true">✳</span>
             <h3>Programação com IA Generativa</h3>
-            <p>AFESU/SENAI · 40 horas</p>
+            <p>AFESU Morro Velho · parceria com SENAI · 40 horas</p>
           </article>
         </div>
+        <p><a class="button button-senai" href="https://www.sp.senai.br/unidade/leopoldina/" target="_blank" rel="noopener noreferrer">Saiba mais sobre SENAI</a></p>
       </div>
     </section>
   </main>
